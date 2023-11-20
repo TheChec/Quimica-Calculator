@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <title>Calculadora Química</title>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>Calculadora Química</h1>
+
+        <button id="openModal">Soluciones morales</button> <br>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+
+                <div class="conversion">
+
+                    <h1>Soluciones morales</h1>
+
+                    <div class="contain">
+
+                        <p>Encontrar Masa del Soluto</p>
+                        <label>Masa molar</label>
+                        <input id="WeiAt" type="number" placeholder="Peso átomico" autocomplete="off" required>
+                        <h2 id="MasaSolu"></h2>
+
+
+                        <p> Encontrar (N)</p>
+                        <label>Volumen</label>
+                        <input id="VoluSol" type="number" placeholder="Volumen" autocomplete="off" required>
+                        <label>Molaridad</label>
+                        <input id="MolSol" type="number" placeholder="Molaridad" autocomplete="off" required>
+                        <h2 id="CalcN"></h2>
+                        <button id="SoluMoral">Calcular</button>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <button id="openModal2">Peso Molar</button> <br>
+
+        <div id="myModal2" class="modal">
+            <div class="modal-content">
+                <form id="FormMasaMolar" action="">
+                    <span class="close" id="closeModal2">&times;</span>
+                    <h2>Peso Molar</h2>
+                    <button id="Add">Agregar</button>
+                    <div id="dinamicInputs"></div>
+                    <h2 id="ResultMasaMolar"></h2>
+                    <button onclick="masaMolar()">Calcular</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <button id="openModal3">Conversion de Unidades</button> <br>
+
+        <div id="myModal3" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal3">&times;</span>
+
+                <div class="conversion">
+                    <h1>Conversion de Unidades</h1>
+
+                    <div class="conversion-box">
+                        <form name="Convertions" action="">
+                            <label>Tipo de Conversión:</label>
+
+                            <select name="Anything" class="convertion" id="SelectC" onchange="Converter()">
+                                <option value="0">Gramos a Moles</option>
+                                <option value="1">Moles a Átomos</option>
+                                <option value="2">Gramos a Átomos</option>
+                            </select>
+                        </form>
+                        
+                            <div class="contain1" id="Contain1">
+                                <input id="GramCon1" type="number" placeholder="Gramos" autocomplete="off">
+                                <input id="MasaMolCon1" type="number" placeholder="Masa molar" autocomplete="off">
+                                <h2 id="ResultConverter1"></h2>
+                                <button id="ConGraMas">Calcular</button>
+                            </div>
+                        
+                        
+                            <div class="contain2" id="Contain2">
+                                <input id="MolCon2" type="number" placeholder="Moles" autocomplete="off">
+                                <input id="AtCon2" type="number" placeholder="1" autocomplete="off" disabled>
+                                <h2 id="ResultConverter2"></h2>
+                                <button id="ConMolAt">Calcular</button>
+                            </div>
+                        
+                        
+                            <div class="contain3" id="Contain3">
+                                <input id="GraCon3" type="number" placeholder="Gramos" autocomplete="off">
+                                <input id="PMCon3" type="number" placeholder="Peso Molar" autocomplete="off">
+                                <input id="Amount1Con3" type="number" placeholder="Cantidad del 1° elemento" autocomplete="off">
+                                <input id="Amount2Con3" type="number" placeholder="Cantidad del 2° elemento" autocomplete="off">
+
+                                <h2 id="ResultConverter3"></h2>
+                                <button id="ConAtGra">Calcular</button>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <button id="openModal">la molaridad del soluto</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Modal Title</h2>
+            <p>Este es el contenido dentro del modal.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+-->
