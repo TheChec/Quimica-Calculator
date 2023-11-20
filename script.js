@@ -12,7 +12,7 @@ Solution.addEventListener('click', () => {
     resultM = resultN * MassMolar;
     console.log(resultN+resultM);
     document.querySelector('#MasaSolu').innerHTML = "La masa es "+resultM+" g"
-    document.querySelector('#CalcN').innerHTML = "La cantida de moles es "+resultN
+    document.querySelector('#CalcN').innerHTML = "N = "+resultN
 })
 
 /*En esta parte creamos un boton que despliegue varios inputs 
@@ -78,7 +78,7 @@ function masaMolar(){
 
 
 //Conversión de unidades
-//Aquí organizamos el select para mostrar lo que necesitamos para converit
+//Aquí organizamos el select para mostrar lo que necesitamos para convertir
 
 function Converter(){
     let Anything;
@@ -147,7 +147,6 @@ ConAtGra.addEventListener('click', () => {
 
 
 
-
 document.getElementById('openModal').addEventListener('click', function() {
     document.getElementById('myModal').style.display = "block";
 });
@@ -171,4 +170,3 @@ document.getElementById('openModal3').addEventListener('click', function() {
 document.getElementById('closeModal3').addEventListener('click', function() {
     document.getElementById('myModal3').style.display = "none";
 });
-
