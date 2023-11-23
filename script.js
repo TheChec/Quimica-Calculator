@@ -2,17 +2,21 @@
 let Solution = document.querySelector('#SoluMoral');
 
 Solution.addEventListener('click', () => {
-    let MassMolar = document.querySelector('#WeiAt').value;
-    let Volumen = document.querySelector('#VoluSol').value;
-    let MolarSoluto = document.querySelector('#MolSol').value;
+    let WeightMol = document.querySelector('#MolSol').value;
+    let Molarmass = document.querySelector('#VoluSol').value;
+
+    
+
+    let WeightDisol = document.querySelector('#WeiAt').value;
     let resultN = 0;
     let resultM = 0;
 
-    resultN = MolarSoluto * Volumen;
-    resultM = resultN * MassMolar;
-    console.log(resultN+resultM);
-    document.querySelector('#MasaSolu').innerHTML = "La masa es "+resultM+" g"
-    document.querySelector('#CalcN').innerHTML = "N = "+resultN
+    resultN= Molarmass/WeightMol;
+    resultM = resultN/WeightDisol;
+
+    
+    document.querySelector('#MasaSolu').innerHTML = "Molalidad (M) "+resultM.toFixed(2)+" g";
+    document.querySelector('#CalcN').innerHTML = "Moles de soluto (N) = "+resultN.toFixed(2);
 })
 
 /*En esta parte creamos un boton que despliegue varios inputs 
@@ -25,7 +29,7 @@ let total = 1;
 
 btnAdd.addEventListener('click',e => {
     let div = document.createElement('div')
-    div.innerHTML = '<label>${total++}</label>  <input type="number" name="element[]" placeholder="Elemento nuevo" autocomplete="off" required>  <input type="number" name="elementN[]" placeholder="Cantidad" autocomplete="off" required>  <button onclick="deletes(this)">Eliminar</button>'
+    div.innerHTML = '<label>${total++}</label>  <input type="number" name="element[]" placeholder="Masa del elemento" autocomplete="off" required>  <input type="number" name="elementN[]" placeholder="Cantidad" autocomplete="off" required>  <button onclick="deletes(this)">Eliminar</button>'
     InputDinamic.appendChild(div);
 
     UpdateTotal();
@@ -37,7 +41,7 @@ const deletes = (e) => {
     InputDinamic.removeChild(divFather);
     UpdateTotal();
 }
-//Actualizar númnero de elementos
+//Actualizar número de elementos
 const UpdateTotal = () => {
     let divs = InputDinamic.children;
     total = 1;
@@ -70,7 +74,7 @@ function masaMolar(){
         result += WeightElement[i] * AmountElement[i];
     }
     let resultMasaMolar = document.querySelector('#ResultMasaMolar');
-    resultMasaMolar.innerHTML = result+" g/mol";
+    resultMasaMolar.innerHTML = result.toFixed(2)+" g/mol";
     document.querySelector('#FormMasaMolar').reset();
     console.log(result);
 }
@@ -84,15 +88,33 @@ function Converter(){
     let Anything;
     Anything = document.Convertions.Anything[document.Convertions.Anything.selectedIndex].value;
     if(Anything == 0){
+        document.querySelector('#Contain5').style.display = 'none';
+        document.querySelector('#Contain4').style.display = 'none';
         document.querySelector('#Contain1').style.display = 'flex';
         document.querySelector('#Contain2').style.display = 'none';
         document.querySelector('#Contain3').style.display = 'none';
    }else if(Anything == 1){
+        document.querySelector('#Contain5').style.display = 'none';
+        document.querySelector('#Contain4').style.display = 'none';
         document.querySelector('#Contain2').style.display = 'flex';
         document.querySelector('#Contain1').style.display = 'none';
         document.querySelector('#Contain3').style.display = 'none';
    }else if(Anything == 2){
+        document.querySelector('#Contain5').style.display = 'none';
+        document.querySelector('#Contain4').style.display = 'none';
         document.querySelector('#Contain3').style.display = 'flex';
+        document.querySelector('#Contain2').style.display = 'none';
+        document.querySelector('#Contain1').style.display = 'none';
+   }else if(Anything == 3){
+        document.querySelector('#Contain5').style.display = 'none';
+        document.querySelector('#Contain4').style.display = 'flex';
+        document.querySelector('#Contain3').style.display = 'none';
+        document.querySelector('#Contain2').style.display = 'none';
+        document.querySelector('#Contain1').style.display = 'none';
+   }else if(Anything == 4){
+        document.querySelector('#Contain5').style.display = 'flex';
+        document.querySelector('#Contain4').style.display = 'none';
+        document.querySelector('#Contain3').style.display = 'none';
         document.querySelector('#Contain2').style.display = 'none';
         document.querySelector('#Contain1').style.display = 'none';
    }
@@ -101,7 +123,6 @@ function Converter(){
 //Conversión de gramos a moles
 
 let btnGraMas = document.querySelector('#ConGraMas');
-
 btnGraMas.addEventListener('click', () => {
     let grams = document.querySelector('#GramCon1').value;
     let MolarMass = document.querySelector('#MasaMolCon1').value; 
@@ -115,7 +136,6 @@ btnGraMas.addEventListener('click', () => {
 //conversión de Moles a Atomos
 
 let btnMolAt = document.querySelector('#ConMolAt');
-
 btnMolAt.addEventListener('click', () => {
     let Mols = document.querySelector('#MolCon2').value;
     let result = 0;
@@ -128,7 +148,6 @@ btnMolAt.addEventListener('click', () => {
 
 //Conversión de Atomos a Gramos
 let ConAtGra = document.querySelector('#ConAtGra');
-
 ConAtGra.addEventListener('click', () => {
     let Grams = document.querySelector('#GraCon3').value;
     let MolarMass = document.querySelector('#PMCon3').value;
@@ -143,9 +162,29 @@ ConAtGra.addEventListener('click', () => {
     document.querySelector('#ResultConverter3').innerHTML = result+" g"
 });
 
+//Conversión de Moles a gramos
+let ConMolGra = document.querySelector('#ConMolGra');
+ConMolGra.addEventListener('click', () =>{
+    let Mol = document.querySelector('#MolCon4').value;
+    let MolarMass = document.querySelector('#MasaMol4').value;
+    
+    
+    let result = 0;
+    
+    result = Mol*(MolarMass/1)
 
+    document.querySelector('#ResultConverter4').innerHTML = result+" g"
+})
+//Conversión de mililitros a litros
+let ConMlL = document.querySelector('#ConMlL');
+ConMlL.addEventListener('click', () =>{
+    let Ml = document.querySelector('#MlCon5').value;
+    let result = 0;
+    
+    result = Ml*(1/1000)
 
-
+    document.querySelector('#ResultConverter5').innerHTML = result+" L"
+})
 
 document.getElementById('openModal').addEventListener('click', function() {
     document.getElementById('myModal').style.display = "block";

@@ -133,8 +133,20 @@ label{
   flex-direction: column;
   align-items: center;
 }
+.contain4{
 
-.contain1 input,.contain2 input,.contain3 input{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.contain5{
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contain1 input,.contain2 input,.contain3 input, .contain4 input, .contain5 input{
   margin-top: 6px;
   margin-bottom: 6px;
   width: 206px;

@@ -12,7 +12,7 @@
     <div class="calculator">
         <h1>Calculadora Química</h1>
 
-        <button id="openModal">Soluciones morales</button> <br>
+        <button id="openModal">Soluciones</button> <br>
 
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -20,18 +20,18 @@
 
                 <div class="conversion">
 
-                    <h1>Soluciones morales</h1>
+                    <h1>Molalidad</h1>
 
                     <div class="contain">
                         <p> Encontrar (N)</p>
-                        <label>Volumen</label>
-                        <input id="VoluSol" type="number" placeholder="Volumen" autocomplete="off" required>
-                        <label>Molaridad</label>
+                        <label>Masa del soluto</label>
+                        <input id="VoluSol" type="number" placeholder="Masa" autocomplete="off" required>
+                        <label>Peso molecular</label>
                         <input id="MolSol" type="number" placeholder="Molaridad" autocomplete="off" required>
                         <h2 id="CalcN"></h2>
-                        <p>Encontrar Masa del Soluto</p>
-                        <label>Masa molar</label>
-                        <input id="WeiAt" type="number" placeholder="Masa molar" autocomplete="off" required>
+                        <p>Encontrar (M)</p>
+                        <label>Kg del disolvente</label>
+                        <input id="WeiAt" type="number" placeholder="Kg" autocomplete="off" required>
                         <h2 id="MasaSolu"></h2>
                         <button id="SoluMoral">Calcular</button>
                     </div>
@@ -78,6 +78,8 @@
                                 <option value="0">Gramos a Moles</option>
                                 <option value="1">Moles a Átomos</option>
                                 <option value="2">Gramos a Átomos</option>
+                                <option value="3">Moles a Gramos</option>
+                                <option value="4">Ml a L</option>
                             </select>
                         </form>
                         
@@ -91,7 +93,6 @@
                         
                             <div class="contain2" id="Contain2">
                                 <input id="MolCon2" type="number" placeholder="Moles" autocomplete="off">
-                                <input id="AtCon2" type="number" placeholder="1" autocomplete="off" disabled>
                                 <h2 id="ResultConverter2"></h2>
                                 <button id="ConMolAt">Calcular</button>
                             </div>
@@ -105,6 +106,19 @@
 
                                 <h2 id="ResultConverter3"></h2>
                                 <button id="ConAtGra">Calcular</button>
+                            </div>
+
+                            <div class="contain4" id="Contain4">
+                                <input id="MolCon4" type="number" placeholder="Moles" autocomplete="off" required>
+                                <input id="MasaMol4" type="number" placeholder="Masa Molar" autocomplete="off" required>
+                                <h2 id="ResultConverter4"></h2>
+                                <button id="ConMolGra">Calcular</button>
+                            </div>
+
+                            <div class="contain5" id="Contain5">
+                                <input id="MlCon5" type="number" placeholder="Mililitros" autocomplete="off" required>
+                                <h2 id="ResultConverter5"></h2>
+                                <button id="ConMlL">Calcular</button>
                             </div>
                         
                     </div>
