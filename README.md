@@ -1,3 +1,4 @@
 Calculadora de química
 
-Pagina para hacer calculos sencillos sobre química, tanto conversiones de unidades y calculos de molalidad
+Pagina para hacer calculos sencillos sobre química, tanto conversiones de unidades y calculos de molalidad:  thechec.github.io/Quimica-Calculator/ 
+
